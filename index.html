@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="./style.css">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init('VyIdEn_h8v1UgZZXC');
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // generate a five digit number for the contact_number variable
+                    this.contact_number.value = Math.random() * 100000 | 0;
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_389zmki', 'template_b9mu5sq', this)
+                        .then(function() {
+                            console.log('SUCCESS!');
+                           document.getElementById('contact-form').reset();
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
+
+        <title>Lorenzo Bravard</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#home" class="nav__logo">Lorenzo Bravard</a>   
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Accueil</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link">Projets</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <h1 class="home__title"><span>BON</span><br>JOUR</h1>
+                    
+                    <a href="BRAVARD LORENZO CV.pdf" target="_blank">Télécharger mon CV</a>
+
+                    <div class="home__scroll">
+                        <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll vers le bas</a>
+                    </div>
+
+                    <img src="./image/moi.png.png" alt="" class="home__img">
+                </div>
+            </section>
+            
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Compétences et Maîtrises</h2>
+
+                <div class="skills__container bd-grid">
+                    <div class="skills__box">
+                        <h3 class="skills__subtitle">Réalisation</h3>
+                        <h4 class="skills__subtitle">Vanilla</h4>
+                        <span class="skills__name">Html</span>
+                        <span class="skills__name">Css</span>
+                        <span class="skills__name">Javascript</span>
+                        <span class="skills__name">Php</span>
+                        <h4 class="skills__subtitle">CMS</h4>
+                        <span class="skills__name">Wordpress</span>
+            
+                        
+                        <h3 class="skills__subtitle">Création et intégration de contenus</h3>
+                        <span class="skills__name">logo</span>
+                        <span class="skills__name">Captation vidéo</span>
+                        <span class="skills__name">Retouche d'images</span>
+                        <h4 class="skills__subtitle">Communication</h4>
+                        <span class="skills__name">Rédaction de charte graphique</span>
+                        
+                    </div>
+
+                    <div class="skills__img">
+                        <img src="https://pbs.twimg.com/media/Fetz-D3X0AEXnPn?format=jpg&name=small" alt="">
+                    </div>
+                </div>
+            </section>
+            <!--===== ABOUT =====-->
+            <section class="about section" id="about">
+                <h2 class="section-title">À propos</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="./image/moi.png.png" alt="">
+                    </div>
+
+                    <div>
+                        <h2 class="about__subtitle">Bravard Lorenzo</h2>
+                        <span class="about__profession">Développeur web</span>
+                        <p class="about__text">Etudiant en BUT MMI (Métiers du multimédia et de l'internet) agés de 20 ans mordu de développement. Passionné par les voyages et la lecture.</p>
+
+                        <div class="about__social">
+                            <a href="https://www.linkedin.com/in/lorenzo-bravard/" class="about__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--===== PORTFOLIO =====-->
+            
+            <section class="portfolio section" id="portfolio">
+                <!-- site photo -->
+                <div class="detail">
+                    <img class="imageprojet" src="https://pbs.twimg.com/media/FetM-TmXwAA93lE?format=jpg&name=small" alt="">
+                    <h2>Projets Photo</h2>
+                    <p class="txtp">Ce site web est entièrement codé en vanilla, c'est un site visant à présenter des photos à travers des concours. Il était possible sur ce site de créer des concours, d'y ajouter des images et de se créer un compte et de se connecter. L'intérêt principal de ce site était de lier le site internet et avec une base de données créé au préalable par nos soins.      </p>
+                    <img class="croix" src="image/croix.png" alt="">
+                </div>
+                <!-- site banker -->
+                <div class="detail2">
+                    <img class="imageprojet" src="https://pbs.twimg.com/media/FetONd8XoAAPb9s?format=png&name=small" alt="">
+                    <h2>Site d'une boulangerie</h2>
+                    <p class="txtp">Ceci était un projet de groupe, nous avons créé un site vitrine fonctionnel pour une boulangerie. Ce projet était principalement axé sur un travail collaboratif en équipe.
+                        Dans ce projet, j'étais chargé d'imaginer le site en faisant une maquette en respectant les contraintes que Wordpress pouvait nous imposer.
+                    </p>
+                    <img class="croix" src="image/croix.png" alt="">
+                </div>
+                <!-- site SAE105 -->
+                <div class="detail3">
+                    <img class="imageprojet" src="https://pbs.twimg.com/media/Fet8fM_WQAAJNvT?format=jpg&name=large" alt="">
+                    <h2>Site HTML/CSS</h2>
+                    <p class="txtp">C'est le premier site de ma confection fait en html et css. Ceci m'a permis d'apprendre l'html, le css et le JS vanilla. Le principal enjeu était de rendre le site responsive. </p>
+                    <img class="croix" src="image/croix.png" alt="">
+                </div>
+                <!-- Photo dualité -->
+                <div class="detail4">
+                    <img class="imageprojet" src="https://pbs.twimg.com/media/Fexd8-AXwAAddkB?format=jpg&name=small" alt="">
+                    <h2>Photo avec jeu d'ombre</h2>
+                    <p class="txtp">Avec cette photo, nous avons voulu mêler l'irréel au réel en jouant avec la dualité de l'horreur et du mignon. Nous voulions montrer que chaque individu puisse cacher un côté sombre.</p>
+                    <img class="croix" src="image/croix.png" alt="">
+                </div>
+                <!-- Logo -->
+                <div class="detail5">
+                    <img class="imageprojet" src="https://pbs.twimg.com/media/FexgyRnXgAEr0Vo?format=png&name=small" alt="">
+                    <h2>Logo</h2>
+                    <p class="txtp">Ceci est le logo d'un site de news spécialisé animé et manga en cours de création nommé MoonSekai. Ce logo représente bien évidemment la lune, mais aussi la terre en simulant les continents ou même encore un volcan.</p>
+                    <img class="croix" src="image/croix.png" alt="">
+                </div>
+                <h2 class="section-title">Projets</h2>
+
+                <div class="portfolio__container bd-grid">
+                    <div class="portfolio__img">
+                        <img src="https://pbs.twimg.com/media/FetM-TmXwAA93lE?format=jpg&name=small" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="" class="portfolio__link-name">En savoir plus</a>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__img">
+                        <img src="https://pbs.twimg.com/media/FetONd8XoAAPb9s?format=png&name=small" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="" class="portfolio__link-name">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="portfolio__img">
+                        <img src="https://pbs.twimg.com/media/Fet8fM_WQAAiyVU?format=jpg&name=small" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="" class="portfolio__link-name">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="portfolio__img">
+                        <img src="https://pbs.twimg.com/media/FexQQujX0AA7YHi?format=jpg&name=small" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="charte_graphique.pdf" target="_blank" class="portfolio__link-name">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="portfolio__img">
+                        <img src="https://pbs.twimg.com/media/Fexd8-AXwAAddkB?format=jpg&name=small" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="" target="_blank" class="portfolio__link-name">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="portfolio__img">
+                        <img src="https://pbs.twimg.com/media/FexgyRnXgAEr0Vo?format=png&name=small" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="" target="_blank" class="portfolio__link-name">En savoir plus</a>
+                        </div>
+                    </div>
+                    
+
+
+                    
+                    </div>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">EMAIL</h3>
+                        <span class="contact__text">lorenzo.bravard@gmail.com</span>
+
+                        <h3 class="contact__subtitle">TELEPHONE</h3>
+                        <span class="contact__text">+33 6 18 51 62 29</span>
+
+                        <h3 class="contact__subtitle">ADRESSE</h3>
+                        <span class="contact__text">49 Rue amiral roussin<br>21 000 Dijon</br></span>
+                    </div>
+
+                    <form action="" class="contact__form" id="contact-form">
+                        <div class="contact__inputs">
+                            <input name="user_name" type="text" placeholder="Nom" class="contact__input">
+                            <input name="user_email"type="mail" placeholder="Email" class="contact__input">
+                            <input type="hidden" name="contact_number">
+                        </div>
+
+                        <textarea name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
+
+                        <input type="submit" value="Envoyer" class="contact__button">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer section">
+            <div class="footer__container bd-grid">
+                <div class="footer__data">
+                    <h2 class="footer__title">BRAVARD LORENZO</h2>
+                    
+                </div>
+
+                <div class="footer__data">
+                    <h2 class="footer__title">NAVIGUER</h2>
+                    <ul>
+                        <li><a href="#home" class="footer__link">Accueil</a></li>
+                        <li><a href="#about" class="footer__link">À propos</a></li>
+                        <li><a href="#skills" class="footer__link"></a>Compétences</li>
+                        <li><a href="#portfolio" class="footer__link">Projets</a></li>
+                        <li><a href="#Contact" class="footer__link">Contacte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__data">
+                    <h2 class="footer__title">ME SUIVRE</h2>
+                    <a href="https://www.linkedin.com/in/lorenzo-bravard/" class="about__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                    
+                </div>
+
+
+            </div>
+        </footer>
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="main.js"></script>
+    </body>
+</html>
